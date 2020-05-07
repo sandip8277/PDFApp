@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using SimplePdfReport.Reporting;
-using SimplePdfReport.Reporting.MigraDoc;
+using PdfReport.Reporting;
+using PdfReport.Reporting.MigraDoc;
 
-namespace SimplePdfReport.Test
+namespace PdfReport.Test
 {
 	internal class Program
 	{
 		private static int start = 0;
 		private static int counter = 0;
 		//const int noOfRecordsPerFile = 20000;
-		const int noOfRecordsPerFile = 4;
+		const int noOfRecordsPerFile = 20;
 		//static int TotalRecords = 100000;
 		static int TotalRecords = 20;
 
 		private static void Main()
 		{
+			System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 			Stopwatch sw = new Stopwatch();
 			var noOfIterations = TotalRecords / noOfRecordsPerFile;
 			for (var i = 0; i < noOfIterations; i++)
@@ -31,7 +32,7 @@ namespace SimplePdfReport.Test
 				reportService.Export(path, reportData);
 				sw.Stop();
 				Console.WriteLine("Time taken" + sw.Elapsed.TotalSeconds);
-				Process.Start(path);
+				//Process.Start(path);
 			}
 			sw.Reset();
 			sw.Start();
@@ -48,11 +49,11 @@ namespace SimplePdfReport.Test
 			{
 				ClientReport = new ClientReport
 				{
-					
+
 					ClientId = "1",
 					ClientName = "Symphony Media -Linear",
-					ReportParameters="MVPD:All"
-					
+					ReportParameters = "MVPD:All"
+
 				},
 				StructureSet = GetStructureData()
 			};
@@ -187,149 +188,6 @@ namespace SimplePdfReport.Test
 							Rate=0.5,
 							Revenue=50.00,
 						},
-							new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement3",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement3",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement4",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement4",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement5",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement5",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement5",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement6",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement6",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement7",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						},
-						new Structure
-						{
-							Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-							Invoice_Number = 1,
-							Agreement_Name = "Agreement7",
-							MVPD="MVPD1",
-							Service="Service1",
-							SubscriberType="SubscriberType1",
-							SystemDesignation="SystemDesignation1",
-							Subs=100.00,
-							Rate=0.5,
-							Revenue=50.00,
-						}
 					}
 			};
 

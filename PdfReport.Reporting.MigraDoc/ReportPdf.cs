@@ -2,12 +2,12 @@
 using MigraDoc.Rendering;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
-using SimplePdfReport.Reporting.MigraDoc.Internal;
+using PdfReport.Reporting.MigraDoc.Internal;
 using System.IO;
 
-namespace SimplePdfReport.Reporting.MigraDoc
+namespace PdfReport.Reporting.MigraDoc
 {
-    public class ReportPdf : IReport
+    public class ReportPdf
     {
         public void Export(string path, ReportData data)
         {
@@ -42,18 +42,15 @@ namespace SimplePdfReport.Reporting.MigraDoc
         private void SetUpPage(Section section)
         {
             section.PageSetup.PageFormat = PageFormat.Letter;
-      section.PageSetup.Orientation = Orientation.Landscape;
-      section.PageSetup.LeftMargin = Size.LeftRightPageMargin;
-            //section.PageSetup.TopMargin = Size.TopBottomPageMargin;
+            section.PageSetup.Orientation = Orientation.Landscape;
+            section.PageSetup.LeftMargin = Size.LeftRightPageMargin;
+            section.PageSetup.TopMargin = Size.TopBottomPageMargin;
             section.PageSetup.RightMargin = Size.LeftRightPageMargin;
-      //section.PageSetup.BottomMargin = Size.TopBottomPageMargin;
-      section.PageSetup.TopMargin = Size.TopPageMargin;
-      section.PageSetup.BottomMargin = Size.BottomPageMargin;
-      section.PageSetup.HeaderDistance = Size.HeaderMargin;
-      section.PageSetup.FooterDistance = Size.FooterMargin;
-      //section.PageSetup.HeaderDistance = Size.HeaderFooterMargin;
-      //section.PageSetup.FooterDistance = Size.HeaderFooterMargin;
-    }
+            section.PageSetup.BottomMargin = Size.TopBottomPageMargin;
+
+            section.PageSetup.HeaderDistance = Size.HeaderFooterMargin;
+            section.PageSetup.FooterDistance = Size.HeaderFooterMargin;
+        }
 
         private void AddHeaderAndFooter(Section section, ReportData data)
         {
@@ -102,10 +99,10 @@ namespace SimplePdfReport.Reporting.MigraDoc
             }
 
             // Save the document...
-            string filename = Path.Combine(path,outputFileName);
+            string filename = Path.Combine(path, outputFileName);
             outputDocument.Save(filename);
             // ...and start a viewer.
-            
+
         }
     }
 }
