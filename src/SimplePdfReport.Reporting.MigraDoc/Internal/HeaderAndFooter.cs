@@ -29,8 +29,10 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
             image.Left = ShapePosition.Left;
 
             var header = section.Headers.Primary.AddParagraph();
-
-            header.AddFormattedText("(SymphonyMedia-Linear) Billing Summary by Agreement", TextFormat.Bold);
+      var myFont = new Font();
+      myFont.Size = 18;
+      header.AddFormattedText("(SymphonyMedia-Linear) Billing Summary by Agreement", myFont);
+      //header.Format.Font.Size = "20px";
             header.AddTab();
             header.AddLineBreak();
             header.AddLineBreak();

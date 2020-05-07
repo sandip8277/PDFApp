@@ -96,7 +96,8 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
         {
             var p = cell.AddParagraph(header);
             p.Style = CustomStyles.ColumnHeader;
-        }
+            cell.Shading.Color = Color.FromRgb(216, 216, 216);
+    }
 
         private void AddStructureRows(Table table, List<Structure> structures)
         {
@@ -365,7 +366,7 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
           {
             var row1 = table.AddRow();
             row1.VerticalAlignment = VerticalAlignment.Center;
-
+            row1.Shading.Color = Color.FromRgb(216, 216, 216);
             row1.Cells[0].AddParagraph("");
             row1.Cells[1].AddParagraph("");
             row1.Cells[2].AddParagraph("");
@@ -436,15 +437,15 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
             // Start at i = 1 to skip column headers
             for (var i = 1; i < table.Rows.Count; i++)
             {
-                if (i % 2 == 0)  // Even rows
-                {
-                    table.Rows[i].Shading.Color = Color.FromRgb(216, 216, 216);
-                }
-        else if (i == 1)
-        {
-          table.Rows[i].Shading.Color = Color.FromRgb(216, 216, 216);
+                //if (i % 2 == 0)  // Even rows
+                //{
+                //    table.Rows[i].Shading.Color = Color.FromRgb(216, 216, 216);
+                //}
+        //else if (i == 1)
+        //{
+        //  table.Rows[i].Shading.Color = Color.FromRgb(216, 216, 216);
 
-        }
+        //}
       }
         }
          

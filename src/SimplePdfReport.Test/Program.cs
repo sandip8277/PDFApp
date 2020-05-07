@@ -190,25 +190,25 @@ namespace SimplePdfReport.Test
 					}
 			};
 
-			var arr = new Structure[noOfRecordsPerFile];
-			for (var i = start; i < noOfRecordsPerFile; i++)
-			{
-				arr[i] = new Structure
-				{
-					Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
-					Invoice_Number = counter + 10,
-					Agreement_Name = "Agreement -" + counter.ToString(),
-					MVPD = "MVPD -" + counter.ToString(),
-					Service = "Service -" + counter.ToString(),
-					SubscriberType = "SubscriberType -" + counter.ToString(),
-					SystemDesignation = "SystemDesignation -" + counter.ToString(),
-					Subs = 100.00 * counter,
-					Rate = 0.5,
-					Revenue = 100.00 * counter * 0.5,
-				};
-				counter++;
-			}
-			someObject.Structures = arr.ToList();
+			//var arr = new Structure[noOfRecordsPerFile];
+			//for (var i = start; i < noOfRecordsPerFile; i++)
+			//{
+			//	arr[i] = new Structure
+			//	{
+			//		Invoice_Date = DateTime.Now.ToString("MM/dd/yyyy"),
+			//		Invoice_Number = counter + 10,
+			//		Agreement_Name = "Agreement -" + counter.ToString(),
+			//		MVPD = "MVPD -" + counter.ToString(),
+			//		Service = "Service -" + counter.ToString(),
+			//		SubscriberType = "SubscriberType -" + counter.ToString(),
+			//		SystemDesignation = "SystemDesignation -" + counter.ToString(),
+			//		Subs = 100.00 * counter,
+			//		Rate = 0.5,
+			//		Revenue = 100.00 * counter * 0.5,
+			//	};
+			//	counter++;
+			//}
+			//someObject.Structures = arr.ToList();
 			return someObject;
 		}
 
