@@ -13,9 +13,9 @@ namespace SimplePdfReport.Test
 		private static int start = 0;
 		private static int counter = 0;
 		//const int noOfRecordsPerFile = 20000;
-		const int noOfRecordsPerFile = 50;
+		const int noOfRecordsPerFile = 20;
 		//static int TotalRecords = 100000;
-		static int TotalRecords = 100;
+		static int TotalRecords = 20;
 
 		private static void Main()
 		{
@@ -48,7 +48,7 @@ namespace SimplePdfReport.Test
 			{
 				ClientReport = new ClientReport
 				{
-					//Id = "38561948",
+					
 					ClientId = "1",
 					ClientName = "Symphony Media -Linear",
 					ReportParameters="MVPD:All"
