@@ -36,7 +36,7 @@ namespace SimplePdfReport.Test
 			sw.Reset();
 			sw.Start();
 			Console.WriteLine();
-			ReportPdf.CombinePDFs(@"D:\TestPDFData", "ConcatenatedDocument1_tempfile.pdf");
+			ReportPdf.CombinePDFs(@"D:\APDFData", "ConcatenatedDocument1_tempfile.pdf");
 			sw.Stop();
 			Console.WriteLine("Time taken to combine the pdf" + sw.Elapsed.TotalSeconds);
 			Console.ReadLine();
@@ -214,7 +214,7 @@ namespace SimplePdfReport.Test
 
 		private static string GetTempPdfPath()
 		{
-			return Path.Combine(@"D:\TestPDFData", Guid.NewGuid().ToString() + ".pdf");
+			return Path.Combine(@"D:\APDFData", Guid.NewGuid().ToString() + ".pdf");
 		}
 
 

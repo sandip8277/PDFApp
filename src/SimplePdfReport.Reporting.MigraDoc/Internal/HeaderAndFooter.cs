@@ -22,7 +22,7 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
         private void AddHeader(Section section, ClientReport clientReport)
         {
 
-            Image image = section.Headers.Primary.AddImage("D:/TestPDFData/Images/Nexstar.jpg");
+            Image image = section.Headers.Primary.AddImage("D:/APDFData/Images/Nexstar.jpg");
             image.Height = "2.0cm";
             image.LockAspectRatio = true;
             image.Top = ShapePosition.Top;
