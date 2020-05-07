@@ -10,7 +10,7 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
 
         public void Add(Section section, ClientReport clientReport)
         {
-            var table = AddPatientInfoTable(section);
+            //var table = AddPatientInfoTable(section);
 
             //AddLeftInfo(table.Rows[0].Cells[0], clientReport);
             //AddLeftInfo(table.Rows[0], clientReport);

@@ -62,19 +62,18 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
         private void AddColumnsAndHeaders(Table table)
         {
             var width = Size.GetWidth(table.Section);
-            table.AddColumn(width * 0.2);
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.2);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
+      table.AddColumn(width * 0.16);
 
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.1);
-            table.AddColumn(width * 0.1);
-
-            var headerRow = table.AddRow();
+      var headerRow = table.AddRow();
             headerRow.Borders.Bottom.Width = 1;
 
             //AddHeader(headerRow.Cells[0], "Structure ID");
@@ -441,7 +440,12 @@ namespace SimplePdfReport.Reporting.MigraDoc.Internal
                 {
                     table.Rows[i].Shading.Color = Color.FromRgb(216, 216, 216);
                 }
-            }
+        else if (i == 1)
+        {
+          table.Rows[i].Shading.Color = Color.FromRgb(216, 216, 216);
+
+        }
+      }
         }
          
     }
